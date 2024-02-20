@@ -7,6 +7,9 @@
   "dependencies": {
     "jsonwebtoken": "^9.0.2"
   },
+  "scripts": {
+    "start": "node --env-file=.env index.js"
+  },
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-plugin-sonarjs": "^0.24.0",
