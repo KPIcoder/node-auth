@@ -1,7 +1,7 @@
 {
-  "name": "node",
+  "name": "tiny-node-jwt-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Provide values for both `ACCESS_TOKEN_SECRET` and `REFRESH_TOKEN_SECRET` in your env file",
   "main": "index.js",
   "type": "module",
   "dependencies": {
@@ -14,5 +14,20 @@
     "eslint": "^8.56.0",
     "eslint-plugin-sonarjs": "^0.24.0",
     "prettier": "^3.2.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KPIcoder/node-auth.git"
+  },
+  "keywords": [
+    "node",
+    "jwt",
+    "auth"
+  ],
+  "author": "kpicoder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KPIcoder/node-auth/issues"
+  },
+  "homepage": "https://github.com/KPIcoder/node-auth#readme"
 }
