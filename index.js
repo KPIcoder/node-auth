@@ -7,19 +7,20 @@ const controllers = new Map([
   ['/verify-token', verifyToken],
 ]);
 
-const server = http.createServer(async (req, res) => {
-  // use json for each response
-  res.setHeader('Content-Type', 'application/json');
+export default (port) =>
+  http
+    .createServer(async (req, res) => {
+      // use json for each response
+      res.setHeader('Content-Type', 'application/json');
 
-  const url = new URL(req.url, `http://${req.headers.host}/`);
-  const handler = controllers.get(url.pathname);
+      const url = new URL(req.url, `http://${req.headers.host}/`);
+      const handler = controllers.get(url.pathname);
 
-  if (!handler) {
-    res.statusCode = 404;
-    return res.end({ statusText: 'Failure', error: 'Route not found' });
-  }
+      if (!handler) {
+        res.statusCode = 404;
+        return res.end({ statusText: 'Failure', error: 'Route not found' });
+      }
 
-  await handler(req, res);
-});
-
-server.listen(44991);
+      await handler(req, res);
+    })
+    .listen(port);
